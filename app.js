@@ -44,29 +44,29 @@ const UsersIcon = (props) => (
 // --- Navbar Component ---
 function Navbar() {
   return (
-    <header className="bg-gray-800 md:sticky top-0 z-10">
+    <header className="bg-gray-800 md:sticky top-0 z-10 shadow-lg transition-all duration-300">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <a className="title-font font-medium text-white mb-4 md:mb-0">
-          <a href="#about" className="ml-3 text-xl">
+          <a href="#about" className="ml-3 text-xl hover:text-white transition-colors duration-200">
             Reed Barger
           </a>
         </a>
         <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700 flex flex-wrap items-center text-base justify-center">
-          <a href="#projects" className="mr-5 hover:text-white">
+          <a href="#projects" className="mr-5 text-gray-400 hover:text-white transition-colors duration-200">
             Past Work
           </a>
-          <a href="#skills" className="mr-5 hover:text-white">
+          <a href="#skills" className="mr-5 text-gray-400 hover:text-white transition-colors duration-200">
             Skills
           </a>
-          <a href="#testimonials" className="mr-5 hover:text-white">
+          <a href="#testimonials" className="mr-5 text-gray-400 hover:text-white transition-colors duration-200">
             Testimonials
           </a>
         </nav>
         <a
           href="#contact"
-          className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">
+          className="inline-flex items-center bg-indigo-600 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-700 rounded-lg text-white text-base mt-4 md:mt-0 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
           Hire Me
-          <ArrowRightIcon className="w-4 h-4 ml-1" />
+          <ArrowRightIcon className="w-4 h-4 ml-2" />
         </a>
       </div>
     </header>
@@ -76,39 +76,41 @@ function Navbar() {
 // --- About Component ---
 function About() {
   return (
-    <section id="about">
+    <section id="about" className="text-gray-300 bg-gray-950"> {/* Adjusted background and text color */}
       <div className="container mx-auto flex px-10 py-20 md:flex-row flex-col items-center">
         <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-          <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">
-            Hi, I'm Reed.
+          <h1 className="title-font sm:text-5xl text-4xl mb-4 font-extrabold text-white"> {/* Stronger heading */}
+            Hi, I'm <span className="text-indigo-400">Reed.</span>
             <br className="hidden lg:inline-block" />I love to build amazing
-            apps.
+            <span className="text-green-400"> apps.</span>
           </h1>
-          <p className="mb-8 leading-relaxed">
+          <p className="mb-8 leading-relaxed text-lg"> {/* Slightly larger text */}
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui
             laborum quasi, incidunt dolore iste nostrum cupiditate voluptas?
             Laborum, voluptas natus?
           </p>
-          <div className="flex justify-center">
+          <div className="flex justify-center flex-wrap gap-4"> {/* Added gap for spacing */}
             <a
               href="#contact"
-              className="inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">
+              className="inline-flex text-white bg-green-500 border-0 py-3 px-8 focus:outline-none hover:bg-green-600 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"> {/* Rounded full, larger padding, more dynamic hover */}
               Work With Me
             </a>
             <a
               href="#projects"
-              className="ml-4 inline-flex text-gray-400 bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg">
+              className="inline-flex text-gray-300 bg-gray-800 border-0 py-3 px-8 focus:outline-none hover:bg-gray-700 hover:text-white rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"> {/* Rounded full, larger padding, more dynamic hover */}
               See My Past Work
             </a>
           </div>
         </div>
-        <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+        <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 relative group"> {/* Added group for image hover */}
           <img
-            className="object-cover object-center rounded"
+            className="object-cover object-center rounded-lg shadow-2xl transition-transform duration-500 group-hover:scale-105"
             alt="hero"
-            src="https://placehold.co/720x600/E0F2F7/1F2937?text=Coding+Image" // Placeholder image for coding.svg
-            onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/720x600/E0F2F7/1F2937?text=Error"; }}
+            src="https://placehold.co/720x600/2D3748/A0AEC0?text=Coding+Image" // Darker placeholder
+            onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/720x600/2D3748/A0AEC0?text=Error"; }}
           />
+          {/* Optional: Add a subtle overlay on hover */}
+          <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 rounded-lg transition-opacity duration-300"></div>
         </div>
       </div>
     </section>
@@ -118,14 +120,14 @@ function About() {
 // --- Projects Component ---
 function Projects() {
   return (
-    <section id="projects" className="text-gray-400 bg-gray-900 body-font">
+    <section id="projects" className="text-gray-300 bg-gray-900 body-font"> {/* Adjusted background and text color */}
       <div className="container px-5 py-10 mx-auto text-center lg:px-40">
         <div className="flex flex-col w-full mb-20">
-          <CodeIcon className="mx-auto inline-block w-10 mb-4" />
-          <h1 className="sm:text-4xl text-3xl font-medium title-font mb-4 text-white">
+          <CodeIcon className="mx-auto inline-block w-12 h-12 mb-4 text-indigo-400" /> {/* Larger icon, color tint */}
+          <h1 className="sm:text-4xl text-3xl font-bold title-font mb-4 text-white">
             Apps I've Built
           </h1>
-          <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
+          <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-gray-400">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo
             facilis repellat ab cupiditate alias vero aliquid obcaecati quisquam
             fuga dolore.
@@ -133,28 +135,30 @@ function Projects() {
         </div>
         <div className="flex flex-wrap -m-4">
           {projects.map((project) => (
-            <a
-              href={project.link}
-              key={project.image}
-              className="sm:w-1/2 w-100 p-4">
-              <div className="flex relative">
+            <div key={project.image} className="sm:w-1/2 w-full p-4"> {/* Changed <a> to <div> for better hover control */}
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block group relative rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+              >
                 <img
                   alt="gallery"
-                  className="absolute inset-0 w-full h-full object-cover object-center"
+                  className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
                   src={project.image}
-                  onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/400x250/E0F2F7/1F2937?text=Error"; }}
+                  onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/400x250/2D3748/A0AEC0?text=Error"; }}
                 />
-                <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
+                <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <h2 className="tracking-widest text-sm title-font font-medium text-green-400 mb-1">
                     {project.subtitle}
                   </h2>
                   <h1 className="title-font text-lg font-medium text-white mb-3">
                     {project.title}
                   </h1>
-                  <p className="leading-relaxed">{project.description}</p>
+                  <p className="leading-relaxed text-gray-300">{project.description}</p>
                 </div>
-              </div>
-            </a>
+              </a>
+            </div>
           ))}
         </div>
       </div>
@@ -165,14 +169,14 @@ function Projects() {
 // --- Skills Component ---
 function Skills() {
   return (
-    <section id="skills">
+    <section id="skills" className="text-gray-300 bg-gray-950"> {/* Adjusted background and text color */}
       <div className="container px-5 py-10 mx-auto">
         <div className="text-center mb-20">
-          <ChipIcon className="w-10 inline-block mb-4" />
-          <h1 className="sm:text-4xl text-3xl font-medium title-font text-white mb-4">
+          <ChipIcon className="w-12 h-12 inline-block mb-4 text-green-400" /> {/* Larger icon, color tint */}
+          <h1 className="sm:text-4xl text-3xl font-bold title-font text-white mb-4">
             Skills &amp; Technologies
           </h1>
-          <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
+          <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-400">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi sit
             ipsa delectus eum quo voluptas aspernatur accusantium distinctio
             possimus est.
@@ -181,7 +185,7 @@ function Skills() {
         <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
           {skills.map((skill) => (
             <div key={skill} className="p-2 sm:w-1/2 w-full">
-              <div className="bg-gray-800 rounded flex p-4 h-full items-center">
+              <div className="bg-gray-800 rounded-lg flex p-4 h-full items-center shadow-md hover:shadow-lg transition-shadow duration-300 transform hover:scale-105"> {/* Rounded corners, shadow, scale on hover */}
                 <BadgeCheckIcon className="text-green-400 w-6 h-6 flex-shrink-0 mr-4" />
                 <span className="title-font font-medium text-white">
                   {skill}
@@ -198,30 +202,30 @@ function Skills() {
 // --- Testimonials Component ---
 function Testimonials() {
   return (
-    <section id="testimonials">
+    <section id="testimonials" className="text-gray-300 bg-gray-900"> {/* Adjusted background and text color */}
       <div className="container px-5 py-10 mx-auto text-center">
-        <UsersIcon className="w-10 inline-block mb-4" />
-        <h1 className="sm:text-4xl text-3xl font-medium title-font text-white mb-12">
+        <UsersIcon className="w-12 h-12 inline-block mb-4 text-indigo-400" /> {/* Larger icon, color tint */}
+        <h1 className="sm:text-4xl text-3xl font-bold title-font text-white mb-12">
           Client Testimonials
         </h1>
         <div className="flex flex-wrap m-4">
           {testimonials.map((testimonial) => (
             <div key={testimonial.name} className="p-4 md:w-1/2 w-full">
-              <div className="h-full bg-gray-800 bg-opacity-40 p-8 rounded">
-                <TerminalIcon className="block w-8 text-gray-500 mb-4" />
-                <p className="leading-relaxed mb-6">{testimonial.quote}</p>
+              <div className="h-full bg-gray-800 bg-opacity-70 p-8 rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1"> {/* Softer background, rounded, shadow, hover effect */}
+                <TerminalIcon className="block w-8 h-8 text-gray-500 mb-4" />
+                <p className="leading-relaxed mb-6 text-gray-300">{testimonial.quote}</p>
                 <div className="inline-flex items-center">
                   <img
                     alt="testimonial"
                     src={testimonial.image}
-                    className="w-12 rounded-full flex-shrink-0 object-cover object-center"
-                    onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/100x100/E0F2F7/1F2937?text=Error"; }}
+                    className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center border-2 border-indigo-400" // Border around image
+                    onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/100x100/2D3748/A0AEC0?text=Error"; }}
                   />
-                  <span className="flex-grow flex flex-col pl-4">
+                  <span className="flex-grow flex flex-col pl-4 text-left"> {/* Aligned text left */}
                     <span className="title-font font-medium text-white">
                       {testimonial.name}
                     </span>
-                    <span className="text-gray-500 text-sm uppercase">
+                    <span className="text-gray-400 text-sm uppercase">
                       {testimonial.company}
                     </span>
                   </span>
@@ -237,10 +241,10 @@ function Testimonials() {
 
 // --- Contact Component ---
 function Contact() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [status, setStatus] = useState(""); // 'success', 'error', 'submitting'
+  const [name, setName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [message, setMessage] = React.useState("");
+  const [status, setStatus] = React.useState(""); // 'success', 'error', 'submitting'
 
   // Function to encode form data for Netlify
   function encode(data) {
@@ -273,9 +277,9 @@ function Contact() {
   }
 
   return (
-    <section id="contact" className="relative">
+    <section id="contact" className="relative text-gray-300 bg-gray-950"> {/* Adjusted background and text color */}
       <div className="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
-        <div className="lg:w-2/3 md:w-1/2 bg-gray-900 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
+        <div className="lg:w-2/3 md:w-1/2 bg-gray-800 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative shadow-xl"> {/* Stronger shadow */}
           <iframe
             width="100%"
             height="100%"
@@ -287,12 +291,12 @@ function Contact() {
             style={{ filter: "opacity(0.7)" }}
             src="https://www.google.com/maps/embed/v1/search?q=kaffi+street&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
           />
-          <div className="bg-gray-900 relative flex flex-wrap py-6 rounded shadow-md">
+          <div className="bg-gray-900 relative flex flex-wrap py-6 rounded shadow-md w-full"> {/* Added w-full */}
             <div className="lg:w-1/2 px-6">
               <h2 className="title-font font-semibold text-white tracking-widest text-xs">
                 ADDRESS
               </h2>
-              <p className="mt-1">
+              <p className="mt-1 text-gray-400">
                 97 Warren St. <br />
                 New York, NY 10007
               </p>
@@ -301,30 +305,30 @@ function Contact() {
               <h2 className="title-font font-semibold text-white tracking-widest text-xs">
                 EMAIL
               </h2>
-              <a className="text-indigo-400 leading-relaxed">
+              <a className="text-indigo-400 leading-relaxed hover:text-indigo-300 transition-colors duration-200">
                 reedbarger@email.com
               </a>
               <h2 className="title-font font-semibold text-white tracking-widest text-xs mt-4">
                 PHONE
               </h2>
-              <p className="leading-relaxed">123-456-7890</p>
+              <p className="leading-relaxed text-gray-400">123-456-7890</p>
             </div>
           </div>
         </div>
         <form
           netlify
           name="contact"
-          onSubmit={handleSubmit} // Added onSubmit handler
-          className="lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
-          <h2 className="text-white sm:text-4xl text-3xl mb-1 font-medium title-font">
+          onSubmit={handleSubmit}
+          className="lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0 bg-gray-800 p-8 rounded-lg shadow-xl"> {/* Added background, padding, rounded, shadow */}
+          <h2 className="text-white sm:text-4xl text-3xl mb-1 font-bold title-font">
             Hire Me
           </h2>
-          <p className="leading-relaxed mb-5">
+          <p className="leading-relaxed mb-5 text-gray-400">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum
             suscipit officia aspernatur veritatis. Asperiores, aliquid?
           </p>
           <div className="relative mb-4">
-            <label htmlFor="name" className="leading-7 text-sm text-gray-400">
+            <label htmlFor="name" className="leading-7 text-sm text-gray-300">
               Name
             </label>
             <input
@@ -333,11 +337,11 @@ function Contact() {
               name="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              className="w-full bg-gray-700 rounded border border-gray-600 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-2 px-4 leading-8 transition-colors duration-200 ease-in-out shadow-sm"
             />
           </div>
           <div className="relative mb-4">
-            <label htmlFor="email" className="leading-7 text-sm text-gray-400">
+            <label htmlFor="email" className="leading-7 text-sm text-gray-300">
               Email
             </label>
             <input
@@ -346,13 +350,13 @@ function Contact() {
               name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              className="w-full bg-gray-700 rounded border border-gray-600 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-2 px-4 leading-8 transition-colors duration-200 ease-in-out shadow-sm"
             />
           </div>
           <div className="relative mb-4">
             <label
               htmlFor="message"
-              className="leading-7 text-sm text-gray-400">
+              className="leading-7 text-sm text-gray-300">
               Message
             </label>
             <textarea
@@ -360,13 +364,13 @@ function Contact() {
               name="message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              className="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+              className="w-full bg-gray-700 rounded border border-gray-600 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 h-32 text-base outline-none text-gray-100 py-2 px-4 resize-none leading-6 transition-colors duration-200 ease-in-out shadow-sm"
             />
           </div>
           <button
             type="submit"
             disabled={status === 'submitting'}
-            className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg disabled:opacity-50 disabled:cursor-not-allowed">
+            className="text-white bg-indigo-600 border-0 py-3 px-6 focus:outline-none hover:bg-indigo-700 rounded-lg text-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed">
             {status === 'submitting' ? 'Submitting...' : 'Submit'}
           </button>
           {status === 'success' && (
@@ -383,11 +387,8 @@ function Contact() {
 
 // --- Main App Component ---
 export default function App() {
-  // Set a default font-family for the entire app using inline style.
-  // This is a quick way to apply it if not using a build process for Tailwind.
-  // In a real project, you'd configure this in your Tailwind CSS config.
   return (
-    <main className="min-h-screen"> {/* Removed direct text-gray-400 bg-gray-900 body-font here to allow body styles to apply */}
+    <main className="min-h-screen">
       <Navbar />
       <About />
       <Projects />
