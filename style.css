@@ -1,0 +1,23 @@
+/*
+ * This file is for any custom CSS you want to add
+ * that isn't handled by Tailwind CSS utility classes.
+ *
+ * For example, if you wanted to define a custom scrollbar,
+ * or specific animations not easily done with Tailwind.
+ */
+
+/* Basic body font family, already set in index.html, but can be reinforced here */
+body {
+    font-family: 'Inter', sans-serif; /* Ensure Inter font is applied */
+}
+
+/* You can add any other global styles here */
+/* For example, to ensure smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom styles for the map iframe filter, if not directly in JSX */
+/* iframe[title="map"] {
+    filter: opacity(0.7);
+} */
