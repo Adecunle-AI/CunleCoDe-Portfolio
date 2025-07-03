@@ -40,20 +40,18 @@ const UsersIcon = (props) => (
   </svg>
 );
 
-
-// --- Navbar Component ---
 function Navbar() {
   return (
     <header className="bg-gray-800 md:sticky top-0 z-10 shadow-lg transition-all duration-300">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <a className="title-font font-medium text-white mb-4 md:mb-0">
           <a href="#about" className="ml-3 text-xl hover:text-white transition-colors duration-200">
-            Reed Barger
+            Adekunle Adedeji
           </a>
         </a>
         <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700 flex flex-wrap items-center text-base justify-center">
           <a href="#projects" className="mr-5 text-gray-400 hover:text-white transition-colors duration-200">
-            Past Work
+            Projects
           </a>
           <a href="#skills" className="mr-5 text-gray-400 hover:text-white transition-colors duration-200">
             Skills
@@ -65,7 +63,7 @@ function Navbar() {
         <a
           href="#contact"
           className="inline-flex items-center bg-indigo-600 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-700 rounded-lg text-white text-base mt-4 md:mt-0 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
-          Hire Me
+          Contact
           <ArrowRightIcon className="w-4 h-4 ml-2" />
         </a>
       </div>
@@ -73,21 +71,21 @@ function Navbar() {
   );
 }
 
-// --- About Component ---
 function About() {
   return (
-    <section id="about" className="text-gray-300 bg-gray-950"> {/* Adjusted background and text color */}
+    <section id="about" className="text-gray-300 bg-gray-950">
       <div className="container mx-auto flex px-10 py-20 md:flex-row flex-col items-center">
         <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-          <h1 className="title-font sm:text-5xl text-4xl mb-4 font-extrabold text-white"> {/* Stronger heading */}
-            Hi, I'm <span className="text-indigo-400">Reed.</span>
-            <br className="hidden lg:inline-block" />I love to build amazing
-            <span className="text-green-400"> apps.</span>
+          <h1 className="title-font sm:text-5xl text-4xl mb-4 font-extrabold text-white">
+            Hi, I'm <span className="text-indigo-400">CunleCode.</span>
+            <br className="hidden lg:inline-block" />I am eager to build amazing
+            <span className="text-green-400">web experiences and apps.</span>
           </h1>
-          <p className="mb-8 leading-relaxed text-lg"> {/* Slightly larger text */}
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui
-            laborum quasi, incidunt dolore iste nostrum cupiditate voluptas?
-            Laborum, voluptas natus?
+          <p className="mb-8 leading-relaxed text-lg">
+           A frontend developer with a passion for creating user-friendly and visually appealing web experiences.
+           I have a strong foundation in HTML, CSS, and JavaScript, and I'm currently expanding my skillset with React.js and other frontend tools.
+           My journey into web development is driven by a fascination with coding and its potential to communicate with computers in powerful and intuitive ways.
+           I'm eager to apply and expand my skills in a professional frontend development environment and continue to grow as a developer.
           </p>
           <div className="flex justify-center flex-wrap gap-4"> {/* Added gap for spacing */}
             <a
