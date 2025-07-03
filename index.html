@@ -145,15 +145,24 @@
                   </a>
                 </a>
                 <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700 flex flex-wrap items-center text-base justify-center">
-                  <a href="#projects" className="mr-5 text-gray-400 hover:text-white transition-colors duration-200">
-                    Projects
-                  </a>
-                  <a href="#skills" className="mr-5 text-gray-400 hover:text-white transition-colors duration-200">
-                    Skills
-                  </a>
-                  <a href="#testimonials" className="mr-5 text-gray-400 hover:text-white transition-colors duration-200">
-                    Testimonials
-                  </a>
+                  {/* Projects Link as a Container */}
+                  <span className="mr-5 px-3 py-1 rounded-full bg-gray-700 hover:bg-gray-600 transition-colors duration-200">
+                    <a href="#projects" className="text-gray-300 hover:text-white">
+                      Projects
+                    </a>
+                  </span>
+                  {/* Skills Link as a Container */}
+                  <span className="mr-5 px-3 py-1 rounded-full bg-gray-700 hover:bg-gray-600 transition-colors duration-200">
+                    <a href="#skills" className="text-gray-300 hover:text-white">
+                      Skills
+                    </a>
+                  </span>
+                  {/* Testimonials Link as a Container */}
+                  <span className="mr-5 px-3 py-1 rounded-full bg-gray-700 hover:bg-gray-600 transition-colors duration-200">
+                    <a href="#testimonials" className="text-gray-300 hover:text-white">
+                      Testimonials
+                    </a>
+                  </span>
                 </nav>
                 <a
                   href="#contact"
