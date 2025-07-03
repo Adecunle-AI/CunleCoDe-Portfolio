@@ -78,8 +78,7 @@ function About() {
         <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
           <h1 className="title-font sm:text-5xl text-4xl mb-4 font-extrabold text-white">
             Hi, I'm <span className="text-indigo-400">CunleCode.</span>
-            <br className="hidden lg:inline-block" />I am eager to build amazing
-            <span className="text-green-400">web experiences and apps.</span>
+            <br className="hidden lg:inline-block" />I am eager to build amazing <span className="text-green-400">web experiences and apps.</span>
           </h1>
           <p className="mb-8 leading-relaxed text-lg">
            A frontend developer with a passion for creating user-friendly and visually appealing web experiences.
@@ -87,7 +86,8 @@ function About() {
            My journey into web development is driven by a fascination with coding and its potential to communicate with computers in powerful and intuitive ways.
            I'm eager to apply and expand my skills in a professional frontend development environment and continue to grow as a developer.
           </p>
-          <div className="flex justify-center flex-wrap gap-4"> {/* Added gap for spacing */}
+          <div className="flex justify-center flex-wrap gap-4">
+    
             <a
               href="#contact"
               className="inline-flex text-white bg-green-500 border-0 py-3 px-8 focus:outline-none hover:bg-green-600 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"> {/* Rounded full, larger padding, more dynamic hover */}
@@ -96,18 +96,18 @@ function About() {
             <a
               href="#projects"
               className="inline-flex text-gray-300 bg-gray-800 border-0 py-3 px-8 focus:outline-none hover:bg-gray-700 hover:text-white rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"> {/* Rounded full, larger padding, more dynamic hover */}
-              See My Past Work
+              Coding Sample
             </a>
           </div>
         </div>
-        <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 relative group"> {/* Added group for image hover */}
+        <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 relative group">
           <img
             className="object-cover object-center rounded-lg shadow-2xl transition-transform duration-500 group-hover:scale-105"
             alt="hero"
-            src="https://placehold.co/720x600/2D3748/A0AEC0?text=Coding+Image" // Darker placeholder
+            src="https://placehold.co/720x600/2D3748/A0AEC0?text=Coding+Image"
             onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/720x600/2D3748/A0AEC0?text=Error"; }}
           />
-          {/* Optional: Add a subtle overlay on hover */}
+          
           <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 rounded-lg transition-opacity duration-300"></div>
         </div>
       </div>
@@ -115,13 +115,12 @@ function About() {
   );
 }
 
-// --- Projects Component ---
 function Projects() {
   return (
-    <section id="projects" className="text-gray-300 bg-gray-900 body-font"> {/* Adjusted background and text color */}
+    <section id="projects" className="text-gray-300 bg-gray-900 body-font">
       <div className="container px-5 py-10 mx-auto text-center lg:px-40">
         <div className="flex flex-col w-full mb-20">
-          <CodeIcon className="mx-auto inline-block w-12 h-12 mb-4 text-indigo-400" /> {/* Larger icon, color tint */}
+          <CodeIcon className="mx-auto inline-block w-12 h-12 mb-4 text-indigo-400" />
           <h1 className="sm:text-4xl text-3xl font-bold title-font mb-4 text-white">
             Apps I've Built
           </h1>
